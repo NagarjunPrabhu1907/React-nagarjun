@@ -1,14 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import ShoppingList  from './ShoppingList';
 
 
 const user = {
   name: 'Hedy Lamarr',
-  // imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
   imageSize: 90,
 };
 
-function App() {
+export default function App() {
    return (
     <>
       <h1>{user.name}</h1>
@@ -19,10 +20,14 @@ function App() {
         style={{
           width: user.imageSize,
           height: user.imageSize
+      
         }}
       />
+      <h1> list of fruits and vegetables</h1>
+      <ShoppingList/>
     </>
+    
   );
 }
 
-export default App;
+// export default App;
