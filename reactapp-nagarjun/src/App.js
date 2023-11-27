@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ShoppingList  from './ShoppingList';
+import Button2 from './Button2';
 
 
 const user = {
@@ -25,9 +26,12 @@ export default function App() {
       />
       <h1> list of fruits and vegetables</h1>
       <ShoppingList/>
+
+      <Button2/>
     </>
     
   );
 }
+
 
 // export default App;
