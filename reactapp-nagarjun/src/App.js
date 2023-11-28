@@ -18,16 +18,16 @@ const App = () =>{
 
    return (
    <>
-            <Welcome name="John" />
+
+   
+
+
+
+            {/* <Welcome name="John" />
             <Students name ="Nagarjun" age = {22}  />
             <Students name ="shivu" age = {24}  />
             <Students name ="kumar" age = {22}  />
-            <Students   />
-  </>
-   );
-
-
-
+            <Students   /> */}
 
      {/* <h1>Welcome to my React App!</h1> */}
      {/* <Hello/> 
@@ -49,6 +49,8 @@ const App = () =>{
       {/* <h1> list of fruits and vegetables</h1>
       //<ShoppingList/> */}
       {/* <Button2/> */}
+      </>
+   );
   }
 
 
