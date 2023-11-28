@@ -22,6 +22,7 @@ const App = () =>{
             <Students name ="Nagarjun" age = {22}  />
             <Students name ="shivu" age = {24}  />
             <Students name ="kumar" age = {22}  />
+            <Students   />
   </>
    );
 
