@@ -4,13 +4,14 @@ export default function Button2() {
     }
   
     return (
-        <div>
+        <>
       <button onClick={handleClick}>
         Click me
       </button>
 
       <p>hai</p>
-      </div>
+      </>
+    
 
     );
   }
