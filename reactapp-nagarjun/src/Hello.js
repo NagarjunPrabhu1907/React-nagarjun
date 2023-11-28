@@ -7,7 +7,7 @@ const Hello =() => {
 
     return (
         <>
-       <button color="blue" shadowSize={2} onClick = {handleClick}>
+       <button  onClick = {handleClick}>
         "JSX"
        </button>
       
