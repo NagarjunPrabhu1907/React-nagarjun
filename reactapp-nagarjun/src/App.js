@@ -5,7 +5,7 @@ import Button2 from './Button2';
 import Hello from './Hello';
 import Welcome from './Welcome';
 import React from 'react'
-
+import Students from './Students';
 
 
 // const user = {
@@ -16,7 +16,15 @@ import React from 'react'
 
 const App = () =>{
 
-   return  <Welcome name="John" />;
+   return (
+   <>
+            <Welcome name="John" />
+            <Students name ="Nagarjun" age = {22}  />
+            <Students name ="shivu" age = {24}  />
+            <Students name ="kumar" age = {22}  />
+  </>
+   );
+
 
 
 
