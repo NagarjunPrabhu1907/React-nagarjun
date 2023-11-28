@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Students =(props) =>
 {
     return (
@@ -9,5 +11,9 @@ const Students =(props) =>
     </>
     
     );
+}
+Students.propTypes = {
+name : PropTypes.string,
+age : PropTypes.number 
 }
 export default Students;
