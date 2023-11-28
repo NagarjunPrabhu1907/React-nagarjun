@@ -4,7 +4,8 @@ import ShoppingList  from './ShoppingList';
 import Button2 from './Button2';
 import Hello from './Hello';
 import Welcome from './Welcome';
-import Component from './Welcome';
+import React from 'react'
+
 
 
 // const user = {
@@ -16,9 +17,13 @@ import Component from './Welcome';
 export default function App() {
    return (
     <>
-     <h1>Welcome to my React App!</h1>
-     <Hello/>
-     <Component/>
+    <Welcome name="John" />;
+     {/* <h1>Welcome to my React App!</h1>
+     <Hello/> 
+     <Welcome/> */}
+     
+
+
       {/* <h1>{user.name}</h1>
       <img
         className="avatar"
