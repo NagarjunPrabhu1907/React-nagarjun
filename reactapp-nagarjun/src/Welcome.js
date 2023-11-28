@@ -1,12 +1,11 @@
 import React from "react";
 
-export default function Welcome(props){
+ const Welcome=(props)=>{
   
-    return (
-    <>
-    return <p>Hello, {props.name}!</p>;
-    {/* <h1> Class component</h1> */}
-    </>
-    );
-  }
+    return  <p>Hello, {props.name}!</p>;
 
+
+    {/* <h1> Class component</h1> */}
+    
+  }
+  export default Welcome;

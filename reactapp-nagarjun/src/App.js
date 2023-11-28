@@ -14,14 +14,16 @@ import React from 'react'
 //   imageSize: 90,
 // };
 
-export default function App() {
-   return (
-    <>
-    <Welcome name="John" />;
-     {/* <h1>Welcome to my React App!</h1>
-     <Hello/> 
-     <Welcome/> */}
-     
+const App = () =>{
+
+   return  <Welcome name="John" />;
+
+
+
+     {/* <h1>Welcome to my React App!</h1> */}
+     {/* <Hello/> 
+     <Welcome/>
+      */}
 
 
       {/* <h1>{user.name}</h1>
@@ -38,13 +40,7 @@ export default function App() {
       {/* <h1> list of fruits and vegetables</h1>
       //<ShoppingList/> */}
       {/* <Button2/> */}
-      
+  }
 
 
-    </>
-    
-  );
-}
-
-
-// export default App;
+export default App;
