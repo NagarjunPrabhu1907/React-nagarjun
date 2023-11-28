@@ -1,11 +1,16 @@
 import React from "react";
 
 const Hello =() => {
+    function handleClick() {
+        alert('This is a simple JSX example');
+      }
 
     return (
         <>
-        <h1>Hello, React!</h1>
-      <p>This is a simple JSX example.</p>
+       <button color="blue" shadowSize={2} onClick = {handleClick}>
+        "JSX"
+       </button>
+      
         </>
     )
 }
