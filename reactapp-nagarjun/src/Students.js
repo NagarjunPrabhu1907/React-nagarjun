@@ -16,4 +16,9 @@ Students.propTypes = {
 name : PropTypes.string,
 age : PropTypes.number 
 }
+
+Students.defaultProps = {
+    name : "Guest",
+    age : 0
+}
 export default Students;
