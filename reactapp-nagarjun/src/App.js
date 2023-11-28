@@ -3,6 +3,8 @@ import './App.css';
 import ShoppingList  from './ShoppingList';
 import Button2 from './Button2';
 import Hello from './Hello';
+import Welcome from './Welcome';
+import Component from './Welcome';
 
 
 // const user = {
@@ -16,6 +18,7 @@ export default function App() {
     <>
      <h1>Welcome to my React App!</h1>
      <Hello/>
+     <Component/>
       {/* <h1>{user.name}</h1>
       <img
         className="avatar"
