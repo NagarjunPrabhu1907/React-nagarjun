@@ -4,33 +4,28 @@ import ShoppingList  from './ShoppingList';
 import Button2 from './Button2';
 import Hello from './Hello';
 import Welcome from './Welcome';
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState,useRef } from 'react'
 import Students from './Students';
 import ChildA from './ChildA';
 
 
 
 function  App (){
-  const [count,setcount] = useState(0)
-  const [data,setData] = useState("ram")
-  useEffect( ()=>{
-    console.log("component mounted")
-  },[data])
-
-   function updateCount() {
-    setcount (count + 1 )
-   }
-
-   function updateData() {
-    setData ("seeta")
-   }
-
-
+  const refElement = useRef("");
+  const[name,setName] = useState("Arjun")
+  console.log(refElement)
+  function Reset(){
+    setName("")
+    refElement.current.focus()
+  }
+  
    return (
    <>
-  <h1>Button clicked {count} times</h1> 
-  <button onClick = {updateCount}>Click</button>
-  <button onClick = {updateData}>update data</button>
+  <h1>learning useRef</h1>
+  <input ref ={refElement} type ="text" value = {name} onChange= {(e)=>setName(e.target.value)}>
+ </input>
+ <button onClick ={Reset} > Reset  </button>
+ 
   </>
    );
   }
