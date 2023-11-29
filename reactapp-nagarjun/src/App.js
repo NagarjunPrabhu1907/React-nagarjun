@@ -4,7 +4,7 @@ import ShoppingList  from './ShoppingList';
 import Button2 from './Button2';
 import Hello from './Hello';
 import Welcome from './Welcome';
-import React from 'react'
+import React, { useState } from 'react'
 import Students from './Students';
 
 
@@ -14,11 +14,11 @@ import Students from './Students';
 //   imageSize: 90,
 // };
 
-const App = () =>{
-
+function  App (){
+ const [count , setCount] = useState(0)
    return (
    <>
-
+      <button onClick ={()=>setCount(count+1)}>{count}</button>
    
 
 
@@ -30,9 +30,9 @@ const App = () =>{
             <Students   /> */}
 
      {/* <h1>Welcome to my React App!</h1> */}
-     {/* <Hello/> 
-     <Welcome/>
-      */}
+      {/* <Hello/> 
+     <Welcome/> */}
+      
 
 
       {/* <h1>{user.name}</h1>
