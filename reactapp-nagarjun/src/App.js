@@ -7,24 +7,16 @@ import Welcome from './Welcome';
 import React, { createContext, useEffect, useState,useRef } from 'react'
 import Students from './Students';
 import ChildA from './ChildA';
+import Memo from './Memo';
 
 
 
 function  App (){
-  const refElement = useRef("");
-  const[name,setName] = useState("Arjun")
-  console.log(refElement)
-  function Reset(){
-    setName("")
-    refElement.current.focus()
-  }
+  
   
    return (
    <>
-  <h1>learning useRef</h1>
-  <input ref ={refElement} type ="text" value = {name} onChange= {(e)=>setName(e.target.value)}>
- </input>
- <button onClick ={Reset} > Reset  </button>
+   <Memo/>
  
   </>
    );
