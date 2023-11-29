@@ -4,54 +4,28 @@ import ShoppingList  from './ShoppingList';
 import Button2 from './Button2';
 import Hello from './Hello';
 import Welcome from './Welcome';
-import React, { useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import Students from './Students';
+import ChildA from './ChildA';
 
-
-// const user = {
-//   name: 'Hedy Lamarr',
-//   imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
-//   imageSize: 90,
-// };
+const data = createContext();
+const data1 = createContext();
 
 function  App (){
- const [count , setCount] = useState(0)
+  const name = "Nagarjun"
+  const gender = "male"
+
    return (
    <>
-      <button onClick ={()=>setCount(count+1)}>{count}</button>
-   
-
-
-
-            {/* <Welcome name="John" />
-            <Students name ="Nagarjun" age = {22}  />
-            <Students name ="shivu" age = {24}  />
-            <Students name ="kumar" age = {22}  />
-            <Students   /> */}
-
-     {/* <h1>Welcome to my React App!</h1> */}
-      {/* <Hello/> 
-     <Welcome/> */}
-      
-
-
-      {/* <h1>{user.name}</h1>
-      <img
-        className="avatar"
-        src={user.imageUrl}
-        alt={'Photo of ' + user.name}
-        style={{
-          width: user.imageSize,
-          height: user.imageSize
-      
-        }}
-      /> */}
-      {/* <h1> list of fruits and vegetables</h1>
-      //<ShoppingList/> */}
-      {/* <Button2/> */}
-      </>
+   <data.Provider value = {name}>
+    <data1.Provider value = {gender}>
+   <ChildA/>
+   </data1.Provider>
+   </data.Provider>
+  </>
    );
   }
 
 
 export default App;
+export {data,data1};
