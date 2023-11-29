@@ -8,24 +8,33 @@ import React, { createContext, useEffect, useState } from 'react'
 import Students from './Students';
 import ChildA from './ChildA';
 
-const data = createContext();
-const data1 = createContext();
+
 
 function  App (){
-  const name = "Nagarjun"
-  const gender = "male"
+  const [count,setcount] = useState(0)
+  const [data,setData] = useState("ram")
+  useEffect( ()=>{
+    console.log("component mounted")
+  },[data])
+
+   function updateCount() {
+    setcount (count + 1 )
+   }
+
+   function updateData() {
+    setData ("seeta")
+   }
+
 
    return (
    <>
-   <data.Provider value = {name}>
-    <data1.Provider value = {gender}>
-   <ChildA/>
-   </data1.Provider>
-   </data.Provider>
+  <h1>Button clicked {count} times</h1> 
+  <button onClick = {updateCount}>Click</button>
+  <button onClick = {updateData}>update data</button>
   </>
    );
   }
 
 
 export default App;
-export {data,data1};
+
