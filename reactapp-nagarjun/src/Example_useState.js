@@ -1,20 +1,20 @@
 import { useState } from "react"; 
 import React from 'react'
 
- function Example_useState() {
-    const [name, setName] = useState("");
+
+
+const Example_useState = () => {
+  const [isOn, setIsOn] = useState(true);
+
   return (
     <div>
-      <form>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Your Name"
-        />
-        <p>{name}</p>
-      </form>
+      <p>Toggle State: {isOn ? 'ON' : 'OFF'}</p>
+      <button onClick={() => setIsOn(!isOn)}>Toggle</button>
     </div>
-  )
-}
+
+
+
+  );
+};
+
 export default Example_useState;
