@@ -20,7 +20,7 @@ export default function Board() {
 
   function handleClick(i) {
     //i = 2
-    //console.log(squares[i])
+    console.log(squares[i])
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
@@ -98,7 +98,7 @@ function calculateWinner(squares) {
       return squares[a];
     }
   }
-  return null ;
+  return null;
 }
 
 
