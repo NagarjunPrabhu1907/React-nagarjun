@@ -1,4 +1,4 @@
-import { useState } from "react"; 
+import { useState ,useEffect} from "react"; 
 import React from 'react'
 
 
@@ -8,6 +8,9 @@ const [isOn, setIsOn] = useState(true);
 
 const [input,setInput] =  useState(" ");
 const[words,setWords] = useState([]);
+useEffect(() => {
+  
+}, [words]);
 
   return (
     <>
@@ -28,6 +31,9 @@ const[words,setWords] = useState([]);
     </div>
     
     <button onClick={() => setWords((state) => [...state, input])}>Add Word</button>
+    <div>
+    `${words.length} words`
+    </div>
 
      
   {words.map((word,idx)=>(
