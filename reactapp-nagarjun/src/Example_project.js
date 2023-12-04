@@ -25,7 +25,10 @@ export default function Example_project() {
         setLocation(storedLocation);
     },[])
 
-    const ref = useRef(NameValue);
+    const ref = useRef();
+    useEffect(()=>{
+        ref.current.focus();
+    },[]);
     function saveToLocalStorage() {
         localStorage.setItem("name", NameValue)
         localStorage.setItem("email", emailValue)
@@ -58,6 +61,7 @@ export default function Example_project() {
                     placeholder="Name"
                     onChange={(e) => setName(e.target.value)}
                     style={inputStyle}
+                    ref={ref}
                 />
             </div>
             <br />        
@@ -69,6 +73,7 @@ export default function Example_project() {
                     placeholder="Email ID"
                     onChange={(e) => setEmail(e.target.value)}
                     style={inputStyle}
+                    
                 />
             </div>
             <br />
@@ -101,6 +106,7 @@ export default function Example_project() {
             <br/>
             <button onClick={saveToLocalStorage}>submit</button>
             <button onClick={Reset} > clear </button>
+            <button>next page </button>
 
         </div>
     )
