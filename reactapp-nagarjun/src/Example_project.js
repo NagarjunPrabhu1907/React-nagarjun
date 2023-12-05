@@ -1,10 +1,14 @@
 import React, { useState,useEffect,useRef } from "react";
+import {useNavigate} from 'react-router-dom';
+import NextPage from "./NextPage";
 
 export default function Example_project() {
     const [NameValue, setName] = useState(' ');
     const [emailValue, setEmail] = useState(' ');
     const [CompanyValue, setCompany] = useState(' ');
     const [locationValue, setLocation] = useState(' ');
+   
+    const navigate = useNavigate();
 
     function Reset() {
         setName("")
@@ -48,7 +52,7 @@ export default function Example_project() {
         marginRight: '8px',
       };
     
-
+      
     return (
         <div>
             <h1> new project</h1>
@@ -105,8 +109,12 @@ export default function Example_project() {
             <br/>
             <br/>
             <button onClick={saveToLocalStorage}>submit</button>
+            {" "}
             <button onClick={Reset} > clear </button>
-            <button>next page </button>
+            {" "}
+            <button onClick={()=> navigate('/next-page')} > next page </button>
+
+            
 
         </div>
     )
