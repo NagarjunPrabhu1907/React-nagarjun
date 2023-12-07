@@ -41,10 +41,10 @@ export default function Example_project() {
         ref.current.focus();
     },[]);
     function saveToLocalStorage() {
-        // localStorage.setItem("name", NameValue)
-        // localStorage.setItem("email", emailValue)
-        // localStorage.setItem("company name", CompanyValue)
-        // localStorage.setItem("location", locationValue)
+        localStorage.setItem("name", NameValue)
+        localStorage.setItem("email", emailValue)
+        localStorage.setItem("company name", CompanyValue)
+        localStorage.setItem("location", locationValue)
         navigate('/next-page', {
             state: {
                 name: NameValue,
@@ -75,50 +75,47 @@ export default function Example_project() {
         if (b) {
              console.log("hii");
             setName(a);
+            
           }
-                // if (!validateName (e.target.value)){
-        //     setError1("name invalid")
-        //     }else
-        //     {
-        //         setError1(null);
-        //     }
+          else{
+            setName('');
+          }         
       }
       
-      const handleEmail = e=>{
-        if (!validateEmail(e.target.value)){
-            setError2("email invalid")
-            }else
-            {
-                setError2(null);
-            }
-            setEmail(e.target.value);
-      }
-      const handleCompanyName = e=>{
-        if (!validateCompany(e.target.value)){
-            setError3("company name invalid")
-            }else
-            {
-                setError3(null);
-            }
-            setCompany(e.target.value);
-      }
-      const handleLocation = e=>{
-        if (!validateLocation(e.target.value)){
-            setError4("location invalid")
-            }else
-            {
-                setError4(null);
-            }
-            setLocation(e.target.value);
-      }
+   const handleEmail = e=> {
+    const c =e.target.value;
+    const d =  /^[A-Za-z0-9_@.]+$/.test(c);
+    console.log("aaa",d);
+    if (d){
+        setEmail(c);
+    }
+    else{
+        setEmail('');
+    }
+   }
+   const handleCompanyName = e=> {
+    const a =e.target.value;
+    const b =  /^[A-Za-z\s'-]+$/.test(a);
+    console.log("aaa",b);
+    if (b){
+        setCompany(a);
+    }
+    else{
+        setCompany('');
+    }
+   }
+   const handleLocation = e=> {
+    const a =e.target.value;
+    const b =  /^[A-Za-z\s'-]+$/.test(a);
+    console.log("aaa",b);
+    if (b){
+        setLocation(a);
+    }
+    else{
+        setLocation('');
+    }
+   }
       
-
-  const validateName = () => /^[A-Za-z\s'-]+$/.test(NameValue);
-  const validateEmail = () => /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailValue);
-  const validateCompany = () => /^[A-Za-z\s'-]+$/.test(CompanyValue);
-  const validateLocation = () => /^[A-Za-z\s'-]+$/.test(locationValue);
-  
-
 
     return (
         <div>
@@ -136,7 +133,7 @@ export default function Example_project() {
                      
                 />
             </div>
-            {error1 && <h2 style={{color: 'red'}}>{error1}</h2>}
+           
             <br />        
             <div style={containerStyle}>
             <label style={labelStyle}> Email : </label>
@@ -148,7 +145,7 @@ export default function Example_project() {
                     style={inputStyle}
                 />
             </div>
-            {error2 && <h2 style={{color: 'red'}}>{error2}</h2>}
+            
             <br />
             
             <div style={containerStyle}>
@@ -162,7 +159,7 @@ export default function Example_project() {
                  
                 />
             </div>
-            {error3 && <h2 style={{color: 'red'}}>{error3}</h2>}
+            
             <br />
             
             <div style={containerStyle}>
@@ -177,11 +174,11 @@ export default function Example_project() {
                      />
                 <br />
             </div>
-            {error4 && <h2 style={{color: 'red'}}>{error4}</h2>}
+            
             <br/>
             <br/>
             <br/>
-            {/* <button style={{marginLeft:"10px"}} onClick={saveToLocalStorage} >submit</button> */}
+      
             <button style={{marginLeft:"20px"}} onClick={Reset} > clear </button>
             <button style={{marginLeft:"25px"}} onClick={saveToLocalStorage} disabled={error1 || error2|| error3 || error4} > next page </button>
 
