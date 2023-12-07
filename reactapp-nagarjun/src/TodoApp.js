@@ -11,6 +11,7 @@ function TodoApp() {
     }
   };
 
+
   return (
     <div>
       <h1>Simple Todo App</h1>

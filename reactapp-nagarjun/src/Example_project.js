@@ -4,10 +4,10 @@ import NextPage from "./NextPage";
 
 
 export default function Example_project() {
-    const [NameValue, setName] = useState();
-    const [emailValue, setEmail] = useState();
-    const [CompanyValue, setCompany] = useState();
-    const [locationValue, setLocation] = useState();
+    const [NameValue, setName] = useState('');
+    const [emailValue, setEmail] = useState('');
+    const [CompanyValue, setCompany] = useState('');
+    const [locationValue, setLocation] = useState('');
     const navigate = useNavigate();
 
 
@@ -23,28 +23,37 @@ export default function Example_project() {
         setCompany("")
         setLocation("")
     }
-    useEffect (()=> {
-        const storedName = localStorage.getItem("name");
-        const storedEmail = localStorage.getItem("email" || "");
-        const storedCompany = localStorage.getItem("company name" || "");
-        const storedLocation = localStorage.getItem("location" || "");
+    // useEffect (()=> {
+    //     const storedName = localStorage.getItem("name");
+    //     const storedEmail = localStorage.getItem("email");
+    //     const storedCompany = localStorage.getItem("company name");
+    //     const storedLocation = localStorage.getItem("location");
        
         
-        setName(storedName); 
-        setEmail(storedEmail);
-        setCompany(storedCompany);
-        setLocation(storedLocation);
-    },[])
+    //    setName(storedName); 
+    //     setEmail(storedEmail);
+    //     setCompany(storedCompany);
+    //     setLocation(storedLocation);
+    // },[])
 
     const ref = useRef();
     useEffect(()=>{
         ref.current.focus();
     },[]);
     function saveToLocalStorage() {
-        localStorage.setItem("name", NameValue)
-        localStorage.setItem("email", emailValue)
-        localStorage.setItem("company name", CompanyValue)
-        localStorage.setItem("location", locationValue)
+        // localStorage.setItem("name", NameValue)
+        // localStorage.setItem("email", emailValue)
+        // localStorage.setItem("company name", CompanyValue)
+        // localStorage.setItem("location", locationValue)
+        navigate('/next-page', {
+            state: {
+                name: NameValue,
+                email: emailValue,
+                companyName: CompanyValue,
+                location1: locationValue,
+            }
+        });
+
         window.alert('Data saved successfully');
     }
   
@@ -59,14 +68,22 @@ export default function Example_project() {
         marginRight: '8px',
       };
       const handleName = e=>{
-        if (!validateName(e.target.value)){
-            setError1("name invalid")
-            }else
-            {
-                setError1(null);
-            }
-            setName(e.target.value);
+        const a = e.target.value;
+        const b =/^[A-Za-z]+$/.test(a);
+        console.log("aaa",a);
+       
+        if (b) {
+             console.log("hii");
+            setName(a);
+          }
+                // if (!validateName (e.target.value)){
+        //     setError1("name invalid")
+        //     }else
+        //     {
+        //         setError1(null);
+        //     }
       }
+      
       const handleEmail = e=>{
         if (!validateEmail(e.target.value)){
             setError2("email invalid")
@@ -96,10 +113,11 @@ export default function Example_project() {
       }
       
 
-  const validateName = () => /^[A-Za-z\s]*$/.test(NameValue);
-  const validateEmail = () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
- const validateCompany = () => /^[A-Za-z\s]*$/.test(CompanyValue);
-  const validateLocation = () => /^[A-Za-z\s]*$/.test(locationValue);
+  const validateName = () => /^[A-Za-z\s'-]+$/.test(NameValue);
+  const validateEmail = () => /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailValue);
+  const validateCompany = () => /^[A-Za-z\s'-]+$/.test(CompanyValue);
+  const validateLocation = () => /^[A-Za-z\s'-]+$/.test(locationValue);
+  
 
 
     return (
@@ -128,8 +146,6 @@ export default function Example_project() {
                     placeholder="Email ID"
                     onChange={handleEmail}
                     style={inputStyle}
-                    
-
                 />
             </div>
             {error2 && <h2 style={{color: 'red'}}>{error2}</h2>}
@@ -165,9 +181,9 @@ export default function Example_project() {
             <br/>
             <br/>
             <br/>
-            <button style={{marginLeft:"10px"}} onClick={saveToLocalStorage}>submit</button>
+            {/* <button style={{marginLeft:"10px"}} onClick={saveToLocalStorage} >submit</button> */}
             <button style={{marginLeft:"20px"}} onClick={Reset} > clear </button>
-            <button style={{marginLeft:"25px"}} onClick={()=> navigate('/next-page')} disabled={!NameValue || !emailValue|| !CompanyValue || !locationValue} > next page </button>
+            <button style={{marginLeft:"25px"}} onClick={saveToLocalStorage} disabled={error1 || error2|| error3 || error4} > next page </button>
 
         </div>
     )
