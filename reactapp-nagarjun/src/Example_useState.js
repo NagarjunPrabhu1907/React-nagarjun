@@ -21,7 +21,7 @@ useEffect(() => {
 
 
 
-    <div className="APP">
+    <div >
     <h1> Input value : {input}</h1>
     <input
     type="text"
