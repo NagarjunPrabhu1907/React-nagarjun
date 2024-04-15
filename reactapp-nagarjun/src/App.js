@@ -25,19 +25,19 @@ import Navbar from './Navbar';
 import FileUpload from './FileUpload';
 import Example from './Example_mediaQuery';
 import BasicGrid from './GridExample';
+import List from './List';
+import GridLayoutLEarning from './GridLayoutLEarning';
 
 function App() {
 
 
   return (
     <>
-<p> hi</p>
+{/* <GridLayoutLEarning/> */}
+<BasicGrid/>
     </>
   );
 }
 
 
 export default App;
-
-
-
